@@ -1,0 +1,18 @@
+{% extends 'admin/base_site.html' %}
+
+{% block welcome-msg %}
+    <strong>{{ user }}</strong>
+{% endblock welcome-msg %}
+
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static 'base_site.css' %}" />
+{% endblock %}
+
+{% comment %} adminのベースサイトはadminのadmin_site.htmlにある {% endcomment %}
+{% comment %} 同名のファイルにすることで、先にこっちが見つかる {% endcomment %}
+{% comment %} github上やDjangで元のサイトが見れる {% endcomment %}
+{% comment %} block.superはblockの部分を書き換えるのではなく、
+                追加する {% endcomment %}

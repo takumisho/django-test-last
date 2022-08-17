@@ -1,0 +1,12 @@
+{% extends "admin/change_form.html" %}
+
+{% block content %}
+    <h2>カテゴリ、タグの追加・編集は管理者のみ行って下さい。</h2>
+    {{ block.super }}
+{% endblock %}
+
+{% comment %}
+どこにこのファイルを置くかでデザインの適用範囲が変わってきます。
+admin直下: 全モデル。
+admin/<アプリ名>/: 特定のアプリのみ
+admin/<アプリ名>/<モデル名>/: 特定のモデルのみ {% endcomment %}

@@ -28,30 +28,40 @@ class Post(models.Model):
         auto_now_add=True,
         editable=False,
         blank=False,
-        null=False)
+        null=False,
+        verbose_name="作成日" #ラベルの名前を変更してる　最後にしないとだめ
+        )
     
     updated = models.DateTimeField(
         auto_now=True,
         editable=False,
         blank=False,
-        null=False)
+        null=False,
+        verbose_name="最終更新日")
         
     title = models.CharField(
         max_length=255,
         blank=False,
-        null=False)
+        null=False,
+        verbose_name="タイトル")
         
     body = models.TextField(
         blank=True,
-        null=False)
+        null=False,
+        verbose_name="本文",
+        help_text="HTMLタグは使えません。 ") #項目入力部分の説明
 
     category = models.ForeignKey(
         Category,
-        on_delete=models.CASCADE)
+        on_delete=models.CASCADE,
+        verbose_name="カテゴリ")
         
     tags = models.ManyToManyField(
         Tag,
-        blank=True)
+        blank=True,
+        verbose_name="タグ")
+
+    published = models.BooleanField(default=True,verbose_name="公開する")#公開済みなのか指定
 
     def __str__(self):
         return self.title

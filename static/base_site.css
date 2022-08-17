@@ -1,0 +1,28 @@
+#header {
+    background: #2e8bc0;
+    color: white;
+  }
+  
+  h1 {
+    color: #0c2d48;
+  }
+  
+  #header a:link, #header a:visited {
+    color: white;
+  }
+  #branding h1, #branding h1 a:visited, #branding h1 a:link {
+    color: white;
+  }
+  
+  .module h2, .module caption, .inline-group h2 {
+    background: #2e8bc0;
+    color: white;
+  }
+  
+  a.section:link, a.section:visited {
+    color: white;
+  }
+
+
+/* web上で左クリック　開発者ツールで調査するでcssを作ると良いかも？ */
+/* chromeだと要素を調査 */
